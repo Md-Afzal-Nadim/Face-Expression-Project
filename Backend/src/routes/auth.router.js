@@ -1,0 +1,20 @@
+const exprees = require("express");
+const authController = require("../controllers/auth.controller");
+const authMiddleware = require("../middleware/auth.middleware");
+
+const router = exprees.Router();
+
+
+router.post("/register",authController.registerUser);
+
+
+router.post("/login", authController.loginUser)
+
+
+router.get("/get-me", authMiddleware.authUser, authController.getMe)
+
+
+router.post("/logout", authController.logoutUser)
+
+
+module.exports = router
