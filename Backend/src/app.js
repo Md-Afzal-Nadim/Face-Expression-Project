@@ -23,8 +23,9 @@ app.use("/api/songs", songRouter);
 
 
 app.use(express.static("./public"));
-app.use("* name", (req, res) => {
-  res.sendFile(path.json(__dirname, "..", "./public/index.html"));
+app.use("*name", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "./public/index.html"));
+  
 });
 
 
