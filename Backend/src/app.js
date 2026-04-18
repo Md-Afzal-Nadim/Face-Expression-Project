@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
   credentials: true,
-  origin: "https://face-expression-project-wed6.onrender.com/"
+  origin: ["http://localhost:5173", "https://face-expression-project-1.onrender.com"],
 }));
 
 
