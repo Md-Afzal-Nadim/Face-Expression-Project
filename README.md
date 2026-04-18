@@ -64,8 +64,7 @@ Users must signup/login before using the application.
 ---
 
 ## 🌍 Live Demo
-
-https://face-expression-project-1.onrender.com
+https://face-expression-project-1.onrender.com/register
 ---
 
 ## 📷 Screenshots
