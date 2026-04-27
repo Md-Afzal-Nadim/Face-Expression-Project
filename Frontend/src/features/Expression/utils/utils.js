@@ -1,10 +1,20 @@
- import {
+import {
     FaceLandmarker,
     FilesetResolver
 } from "@mediapipe/tasks-vision";
 
 
 export const init = async ({ landmarkerRef, videoRef, streamRef }) => {
+    // Wait for video element to be ready
+    if (!videoRef.current) {
+        await new Promise(resolve => setTimeout(resolve, 100));
+    }
+
+    if (!videoRef.current) {
+        console.error("Video element not found");
+        return;
+    }
+
     const vision = await FilesetResolver.forVisionTasks(
         "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest/wasm"
     );
@@ -36,7 +46,7 @@ export const detect = ({ landmarkerRef, videoRef, setExpression }) => {
     );
 
     if (results.faceBlendshapes?.length > 0) {
-        const blendshapes = results.faceBlendshapes[ 0 ].categories;
+        const blendshapes = results.faceBlendshapes[0].categories;
 
         const getScore = (name) =>
             blendshapes.find((b) => b.categoryName === name)?.score || 0;

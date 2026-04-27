@@ -1,10 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL:
-    window.location.hostname === "localhost"
-      ? "http://localhost:3000"
-      : "https://face-expression-project-1.onrender.com",
+  baseURL: "https://face-expression-project-1.onrender.com",
   withCredentials: true
 })
 
