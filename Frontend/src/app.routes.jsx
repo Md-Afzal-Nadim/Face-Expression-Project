@@ -11,7 +11,7 @@ import Home from "./features/home/pages/Home";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Protected><Home /></Protected>
+   element: <Protected><Home /></Protected>
   },
   {
     path: "/register",

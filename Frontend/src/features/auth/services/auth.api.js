@@ -1,9 +1,15 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://face-expression-project-1.onrender.com",
+  baseURL:
+    window.location.hostname === "localhost"
+      ? "http://localhost:3000"
+      : "https://face-expression-project-1.onrender.com",
+
   withCredentials: true
-})
+});
+
+
 
              // User Register
 export async function register({ username, email, password }) {
